@@ -1,0 +1,81 @@
+// Definition
+
+@mixin button() {
+  border-radius: .5rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  overflow: hidden;
+  padding: .75rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms ease-in-out;
+  white-space: nowrap;
+
+  &:not(:only-child),
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}
+
+.button {
+  @include button();
+
+  // Icon
+
+  i {
+    margin-right: .5rem;
+  }
+
+  // Sizing
+
+  &-wide {
+    @include flex($direction: row, $justify: center, $align: center);
+
+    width: 100%;
+  }
+
+  &-medium {
+    font-size: 16px;
+    min-width: 12rem;
+    padding: 1.25rem 1.75rem;
+
+    @include media-queries-down(sm) {
+      width: auto;
+    }
+  }
+
+  &-small {
+    font-size: 10px;
+    padding: .25rem .5rem;
+  }
+
+  // Color variations
+
+  @mixin button-variant ($parent-color-name, $parent-color-value) {
+    background-color: var(--color-#{$parent-color-name}-default);
+    color: color-contrast($parent-color-value);
+
+    &:hover {
+      background-color: var(--color-#{$parent-color-name}-hover);
+      color: color-contrast($parent-color-value);
+    }
+  }
+
+  @each $color-name, $color-value in $colors {
+    &-#{$color-name} {
+      @include button-variant($color-name, $color-value);
+    }
+  }
+}

@@ -1,0 +1,58 @@
+// Colors
+
+$base-colors: (
+  "primary": #18233c,
+  "secondary": #c3f132,
+  "accent": #00dc82,
+  "dark": #000,
+  "light": #fff,
+  "gray": #343434
+);
+
+$special-colors: (
+  "success": #00dc82,
+  "error": #ed1459,
+  "warning": #ffcd10,
+  "info": #17a2b8,
+);
+
+// Map merge
+
+$color-maps: ();
+$colors: map-merge($base-colors, $special-colors);
+
+@each $color-name, $color-value in $colors {
+  $color-maps: map-merge(
+    $color-maps,(
+      $color-name: (
+        "default": $color-value,
+        "hover": darken($color-value, 10%),
+        "light": lighten($color-value, 25%),
+        "lighten": lighten($color-value, 50%),
+        "lightest": lighten($color-value, 75%),
+      )
+    )
+  );
+}
+
+:root {
+  @each $color-name, $color-map in $color-maps {
+    @each $shade-name, $shade-value in $color-map {
+      --color-#{$color-name}-#{$shade-name}: #{$shade-value};
+    }
+  }
+}
+
+// Generate classes
+
+@each $color-name, $color-map in $color-maps {
+  @each $shade-name, $shade-value in $color-map {
+    .color-#{$color-name}-#{$shade-name} {
+      color: #{$shade-value};
+    }
+
+    .bg-#{$color-name}-#{$shade-name} {
+      background-color: #{$shade-value};
+    }
+  }
+}

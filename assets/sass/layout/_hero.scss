@@ -1,0 +1,38 @@
+.hero {
+  background-color: var(--color-primary-default);
+  position: relative;
+  z-index: 1;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+
+  h1 {
+    color: var(--color-light-default);
+  }
+
+  p {
+    color: var(--color-light-default);
+    font-size: var(--font-size-h5);
+    opacity: .75;
+    padding: 0 0 3rem;
+  }
+
+  .container {
+    @include flex ($direction: column, $justify: center, $align: center);
+
+    height: 95vh;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+
+    @include media-queries-up(md) {
+      height: 45rem;
+    }
+  }
+}

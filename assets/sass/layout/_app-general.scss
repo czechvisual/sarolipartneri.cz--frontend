@@ -1,0 +1,30 @@
+.app {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.hide {
+  &-on {
+    &-desktop {
+      @include media-queries-up(md) {
+        display: none !important;
+      }
+    }
+
+    &-mobile {
+      @include media-queries-down(sm) {
+        display: none !important;
+      }
+    }
+  }
+
+  &-completely {
+    display: none !important;
+  }
+}
+
+.lock-scroll {
+  overflow: hidden;
+}

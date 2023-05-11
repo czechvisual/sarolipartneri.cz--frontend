@@ -1,0 +1,93 @@
+.post {
+  &-feature {
+    background-color: var(--color-primary-default);
+    position: relative;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      opacity: .5;
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .date {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .container {
+      @include flex ($direction: column, $justify: center, $align: flex-start);
+
+      @include media-queries-up(md) {
+        padding: 3rem 1rem;
+        text-align: left;
+      }
+
+      @include media-queries-up(xxl) {
+        height: 30rem;
+      }
+
+      height: 20rem;
+      padding: 3rem;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        color: var(--color-light-default);
+      }
+
+      .date {
+        color: var(--color-light-default);
+      }
+    }
+  }
+
+  &-content {
+    padding: 2rem 0;
+  }
+
+  &-item {
+    @include flex($direction: column, $justify: null, $align: flex-start);
+
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+
+    a.image {
+      height: 15rem;
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        @include transition(.3s, ease-in-out);
+
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1);
+        width: 100%;
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    a {
+      @include transition(.3s, ease-in-out);
+
+      color: var(--color-primary-default);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-secondary-hover);
+      }
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}

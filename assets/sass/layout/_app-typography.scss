@@ -1,0 +1,53 @@
+body {
+  font-family: var(--font-default);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-normal);
+  text-rendering: geometricprecision;
+}
+
+$font-settings: (
+  h1: (bold, normal),
+  h2: (bold, normal),
+  h3: (regular, normal),
+  h4: (bold, normal),
+  h5: (regular, normal),
+  h6: (bold, normal),
+  p: (regular, normal)
+);
+
+@each $selector, $values in $font-settings {
+  $font-weight: nth($values, 1);
+  $line-height: nth($values, 2);
+
+  @include font-setting($selector, $font-weight, $line-height);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+b,
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+p {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

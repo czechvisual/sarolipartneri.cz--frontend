@@ -1,0 +1,54 @@
+.owl-theme .owl-nav {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+  background-color: var(--color-light-default);
+  border-radius: 3px;
+  color: var(--color-light-default);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background-color: var(--color-secondary-default);
+  color: var(--color-light-default);
+  text-decoration: none;
+}
+
+.owl-theme .owl-nav .disabled {
+  cursor: default;
+  opacity: .5;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+
+.owl-theme .owl-dots {
+  text-align: center;
+}
+
+.owl-theme .owl-dots .owl-dot {
+  display: inline-block;
+  zoom: 1;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background-color: var(--color-primary-light);
+  border-radius: 30px;
+  display: block;
+  height: 10px;
+  margin: 5px 7px;
+  transition: opacity 200ms ease;
+  width: 10px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: var(--color-secondary-default);
+}

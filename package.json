@@ -1,0 +1,49 @@
+{
+  "name": "developtheme",
+  "description": "Komplexní, individuální ACF šablona na míru pro váš web. Vytvořeno s péčí a citem &hearts",
+  "author": "czechvisual | Patrik Vaďura",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "gulp",
+    "watch:frontend": "sass --watch assets/sass/app.scss public/assets/css/app.css --style compressed",
+    "watch:admin": "sass --watch assets/sass/app.scss public/assets/css/app.css --style compressed",
+    "lint": "npx stylelint \"**/*.scss\"",
+    "watch": "npm run lint && npm run watch:frontend && npm run watch:admin"
+  },
+  "dependencies": {
+    "bootstrap-icons": "^1.9.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-stylelint": "^13.0.0",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-watch-sass": "^1.4.1",
+    "lazyload": "^2.0.0-rc.2",
+    "sanitize.css": "git+https://github.com/csstools/sanitize.css.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "browser-sync": "^2.29.1",
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.5",
+    "sass": "^1.62.1",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended": "^8.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-declaration-strict-value": "^1.9.2",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0"
+  }
+}

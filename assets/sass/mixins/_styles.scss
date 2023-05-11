@@ -1,0 +1,9 @@
+// Styles
+
+// Shadow
+
+@mixin shadow($color, $intensity) {
+  $default-shadow-color: rgba($color, $intensity);
+
+  box-shadow: .15rem .15rem .25rem 0 $default-shadow-color;
+}

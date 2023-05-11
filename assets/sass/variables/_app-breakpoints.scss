@@ -1,0 +1,26 @@
+// Layout widths
+
+$breakpoints: (
+  xs: 0,
+  sm: 599px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+$breakpoints: map-merge($breakpoints, $breakpoints);
+
+$breakpoints-fonts: (
+  md: 768px,
+  sm: 599px
+);
+$breakpoints-fonts: map-merge($breakpoints-fonts, $breakpoints-fonts);
+
+$containers: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1440px
+);
+$containers: map-merge($containers, $containers);

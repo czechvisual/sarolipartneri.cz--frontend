@@ -1,0 +1,6 @@
+dialog {
+  &::backdrop {
+    background-color: var(--color-dark-light);
+    opacity: .5;
+  }
+}

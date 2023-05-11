@@ -1,0 +1,62 @@
+// Definition
+
+@mixin breadcrumb-item {
+  @include transition(.3s ease-in-out);
+
+  color: var(--color-primary-base);
+  cursor: pointer;
+  display: inline;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 0 .25rem;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.breadcrumbs {
+  @include breadcrumb-item();
+
+  a {
+    @include breadcrumb-item();
+
+    font-weight: var(--font-weight-bold); // individual
+
+    &:only-of-type,
+    &:first-of-type {
+      margin-left: .5rem;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    &.disabled,
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .5;
+    }
+  }
+
+  i {
+    color: var(--color-primary-base);
+    opacity: .25;
+  }
+
+  // Sizing
+
+  &-small {
+    font-size: 10px;
+    padding: .25rem .5rem;
+  }
+
+  &-large {
+    font-size: 16px;
+    min-width: 12rem;
+    padding: 1.25rem 1.75rem;
+
+    @include media-queries-down(sm) {
+      width: auto;
+    }
+  }
+}

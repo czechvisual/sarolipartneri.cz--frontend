@@ -1,0 +1,122 @@
+// Font face
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import 'app-fontface';
+
+// Font families
+$font-families: (
+  "default": "'PP Mori', arial, sans-serif",
+  "monospace": "'Space Mono', monospace",
+);
+$font-families: map-merge($font-families, $font-families);
+
+// Line heights
+$line-heights: (
+  "small": 1,
+  "normal": 1.25,
+  "medium": 1.5,
+  "large": 2
+);
+$line-heights: map-merge($line-heights, $line-heights);
+
+// Font weight
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+  "black": 900
+);
+$font-weights: map-merge($font-weights, $font-weights);
+
+// Font sizes
+$font-sizes: (
+  "d3": 120px,
+  "d2": 90px,
+  "d1": 70px,
+  "h1": 55px,
+  "h2": 40px,
+  "h3": 30px,
+  "h4": 22px,
+  "h5": 18px,
+  "h6": 14px,
+  "p-large": 16px,
+  "p-medium": 14px,
+  "p": 12px,
+  "p-small": 10px
+);
+$font-sizes: map-merge($font-sizes, $font-sizes);
+
+@function rounded-font-size($size) {
+  $rounded-size: round($size);
+  $final-size: ceil(calc($rounded-size / 2)) * 2;
+
+  @return #{$final-size};
+}
+
+// Generate :root variables
+:root {
+  @each $font-family-name, $value in $font-families {
+    --font-#{$font-family-name}: #{$value};
+  }
+
+  @each $line-height-name, $value in $line-heights {
+    --line-height-#{$line-height-name}: #{$value};
+  }
+
+  @each $font-weight-name, $value in $font-weights {
+    --font-weight-#{$font-weight-name}: #{$value};
+  }
+
+  @each $font-size-name, $value in $font-sizes {
+    --font-size-#{$font-size-name}: #{$value};
+
+    $factor: 1;
+
+    @each $breakpoint, $width in $breakpoints-fonts {
+      $factor: calc($factor - .1);
+      $rounded-value: rounded-font-size(calc($value * $factor));
+
+      // Ensure the calculated value is not less than 9px
+      $rounded-value: max(9 * 1px, $rounded-value);
+
+      @media (max-width: $width) {
+        --font-size-#{$font-size-name}: #{$rounded-value};
+      }
+    }
+  }
+}
+
+// Generate classes
+@each $font-size-name, $value in $font-sizes {
+  .font-size-#{$font-size-name} {
+    font-size: var(--font-size-#{$font-size-name});
+  }
+}
+
+@each $line-height, $value in $line-heights {
+  .line-height-#{$line-height} {
+    line-height: $value;
+  }
+}
+
+@each $font-weight, $value in $font-weights {
+  .font-weight-#{$font-weight} {
+    font-weight: $value;
+  }
+}
+
+// Font setting
+@mixin font-setting($selector, $font-weight, $line-height) {
+  #{$selector} {
+    font-size: var(--font-size-#{$selector});
+    font-weight: var(--font-weight-#{$font-weight});
+    line-height: var(--line-height-#{$line-height});
+
+    span,
+    b {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}
