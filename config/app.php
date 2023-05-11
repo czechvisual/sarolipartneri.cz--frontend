@@ -6,7 +6,7 @@ function app() {
 
         'info' => [
             'logo' => '/assets/img/logo.svg',
-            'copyright-name' => 'czechvisual.cz',
+            'copyright-name' => 'Saroli & Partneři s.r.o.',
             'creator' => 'czechvisual',
             'creator-url' => 'https://czechvisual.cz/',
             'logo-creator' => '/assets/img/logo-creator.svg'

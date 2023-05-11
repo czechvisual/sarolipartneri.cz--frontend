@@ -50,6 +50,8 @@ function custom_menu_order( $menu_ord ) {
         'edit.php?post_type=page', // Pages
         'edit.php', // Posts
         'edit.php?post_type=carousel', // Carousel
+        'edit.php?post_type=service', // Carousel
+        'edit.php?post_type=reference', // Carousel
         'separator2', // Second separator
         'separator-last', // Last separator
         'themes.php', // Appearance

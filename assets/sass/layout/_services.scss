@@ -1,0 +1,28 @@
+.services {
+  background-color: var(--color-primary-default);
+  color: var(--color-light-default);
+  padding: 5rem;
+
+  p {
+    font-size: var(--font-size-p-medium);
+    line-height: var(--line-height-medium);
+  }
+
+  &-item {
+    @include transition(.3s, ease-in-out);
+
+    background-color: var(--color-light-default);
+    color: var(--color-primary-default);
+    padding: 2rem;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    img {
+      margin-bottom: 1rem;
+      width: 4rem;
+    }
+  }
+}

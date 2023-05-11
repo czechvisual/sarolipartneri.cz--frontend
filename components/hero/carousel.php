@@ -34,6 +34,8 @@
                     />
                 <?php endif; ?>
 
+                <div class="overlay"></div>
+
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -41,16 +43,8 @@
                                 <h1 class="wow slideInLeft" data-wow-duration="1s" data-wow-offset="10">
                                     <?= get_the_title() ?>
                                 </h1>
-                            <?php endif; ?>
 
-                            <?php if (isset($description)) : ?>
-                                <p>
-                                    <?= get_the_content() ?>
-                                </p>
-                            <?php endif; ?>
-
-                            <?php if (isset($template_content)) : ?>
-                                <?= $template_content ?>
+                                <div class="divider wow slideInLeft" data-wow-duration="1.5s" data-wow-offset="10"></div>
                             <?php endif; ?>
 
                             <?php
@@ -70,6 +64,44 @@
                                     'color' => __('secondary'),
                                 ]) ?>
                             <?php endif; ?>
+                        </div>
+
+                        <?php
+                        $features = get_field('features');
+
+                        $features_items = array(
+                            '01' => array(
+                                'number'  => 'number',
+                                'subtitle'  => 'subtitle',
+                            ),
+                            '02' => array(
+                                'number'  => 'number_02',
+                                'subtitle'  => 'subtitle_02',
+                            ),
+                            '03' => array(
+                                'number'  => 'number_03',
+                                'subtitle'  => 'subtitle_03',
+                            )
+                        ); ?>
+
+                        <div class="features">
+                            <div class="row">
+
+                                <?php foreach($features_items as $parameter => $values): ?>
+
+                                    <div class="col-12 col-md-4">
+                                        <span class="font-size-h3 font-weight-bold">
+                                            <?=$features[$values['number']]?>
+                                        </span>
+
+                                        <h5 class="pt-3">
+                                            <?=$features[$values['subtitle']]?>
+                                        </h5>
+                                    </div>
+
+                                <?php endforeach;?>
+
+                            </div>
                         </div>
                     </div>
                 </div>
