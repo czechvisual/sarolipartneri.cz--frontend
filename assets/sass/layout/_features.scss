@@ -1,0 +1,17 @@
+.features {
+  padding: 5rem 1rem;
+  text-align: center;
+
+  &-item {
+    @include transition(.3s, ease-in-out);
+
+    color: var(--color-primary-default);
+    height: 100%;
+    padding: 1rem;
+
+    p {
+      margin-top: 1rem;
+      line-height: var(--line-height-medium);
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.reference {
+  padding: 5rem 1rem;
+
+  &-carousel {
+    padding: 5rem 0 0;
+
+    @include media-queries-down(sm) {
+      padding: 3rem 0 0;
+    }
+  }
+
+  &-item {
+    @include flex(row, flex-start, center);
+    @include transition(.3s, ease-in-out);
+
+    color: var(--color-primary-default);
+    height: 100%;
+    padding: 1rem;
+
+    p {
+      margin-top: 1rem;
+      line-height: var(--line-height-medium);
+    }
+  }
+}

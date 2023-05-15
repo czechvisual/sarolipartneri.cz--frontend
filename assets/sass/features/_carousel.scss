@@ -1,0 +1,30 @@
+.slick-dots {
+  position: absolute;
+  bottom: -2rem;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+
+  li {
+    &.slick-active button:before {
+      opacity: 1;
+      color: var(--color-secondary-default);
+    }
+
+    button {
+      &:hover:before {
+        color: var(--color-secondary-light);
+      }
+
+      &:before {
+        font-size: .75rem;
+        line-height: 1.25rem;
+        opacity: .25;
+        color: var(--color-gray-light);
+      }
+    }
+  }
+}

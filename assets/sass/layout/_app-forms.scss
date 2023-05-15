@@ -1,0 +1,156 @@
+// Labels
+legend,
+label {
+  color: var(--color-gray-default);
+  font-size: var(--font-size-p-medium);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: .5rem;
+}
+
+// Unset checkbox and radio button labels
+input + label {
+  font-weight: unset;
+}
+
+form p {
+  margin: 1rem 0;
+}
+
+// Form input elements and textareas
+textarea {
+  max-height: 8rem;
+}
+
+textarea,
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+input[type='number'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='search'] {
+  background-color: var(--color-gray-lightest);
+  border-radius: .5rem;
+  border: none;
+  color: var(--color-gray-default);
+  font-size: var(--font-size-p);
+  line-height: 1.5rem;
+  margin-bottom: 0;
+  width: 90%;
+  max-width: 100%;
+  padding: .5rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: background .55s;
+
+  @include media-queries-down(sm) {
+    max-width: 100%;
+  }
+
+  &::placeholder {
+    color: var(--color-gray-lighten);
+    opacity: .4;
+  }
+
+  &:focus {
+    background-color: var(--color-gray-lightest);
+    border-color: var(--color-gray-light);
+    color: var(--color-gray-default);
+
+    &::placeholder {
+      color: var(--color-gray-default);
+      opacity: .8;
+    }
+  }
+}
+
+// Select drop downs
+select {
+  appearance: none;
+  background-image: url('data:image/svg+xml, %3Csvg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M2.049 1.552L6.22 6.268a.188.188 0 00.28 0l4.173-4.716" stroke="%23212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/%3E%3Cdefs%3E%3Cpath fill="none" transform="translate(.861 .45)" d="M0 0h10.544v7.95H0z"/%3E%3C/defs%3E%3C/svg%3E%0A');
+  background-position: right 1.5rem center;
+  background-repeat: no-repeat;
+  background-size: 11px auto;
+  border-color: var(--color-gray-light);
+  border-radius: .5rem;
+  border-style: solid;
+  border-width: 1px;
+  color: var(--color-gray-default);
+  font-size: var(--font-size-p);
+  line-height: 1.5rem;
+  max-width: 100%;
+  min-width: 0;
+  padding: .5rem 1.5rem;
+  text-indent: 1px;
+  transition: none;
+  width: 100%;
+}
+
+// Checkboxes & radio buttons
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--color-gray-lightest);
+  border: none;
+  color: currentColor;
+  display: grid;
+  float: left;
+  height: 1.5rem;
+  margin: -.25rem .5rem 0 0;
+  place-content: center;
+  width: 1.5rem;
+}
+
+// Round style radio buttons
+input[type="radio"]::before,
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+// Square style checkboxes
+input[type="checkbox"]::before,
+input[type="checkbox"] {
+  border-radius: .5rem;
+}
+
+input[type="radio"]::before,
+input[type="checkbox"]::before {
+  background-color: var(--color-gray-lightest);
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 16 16"%3E%3Cpath fill="none" stroke="%235b329a" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3" d="m1 9 4 4L15 3" class="nc-icon-wrapper" data-cap="butt"/%3E%3C/svg%3E');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  border: none;
+  content: '';
+  height: 1.5rem;
+  opacity: 0;
+  transform: scale(.8);
+  transition: transform .2s;
+  width: 1.5rem;
+}
+
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  // Hide element visually on click so it creates a bouncy animation illusion
+  background-color: transparent;
+  border-color: transparent;
+}
+
+input[type="radio"]:hover,
+input[type="radio"] + label:hover,
+input[type="radio"]:focus,
+input[type="radio"] + label:focus,
+input[type="checkbox"]:hover,
+input[type="checkbox"] + label:hover,
+input[type="checkbox"]:focus,
+input[type="checkbox"] + label:focus {
+  cursor: pointer;
+}

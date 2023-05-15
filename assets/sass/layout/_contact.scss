@@ -1,0 +1,31 @@
+.contact {
+  padding: 0;
+
+  &-cta {
+    background-color: var(--color-secondary-default);
+    box-shadow: 50rem 0 0 0 var(--color-secondary-default);
+    color: var(--color-light-default);
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  &-form {
+  }
+
+  &-image {
+    position: relative;
+    z-index: 1;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+
+  .container {
+    padding: 3rem 1rem;
+  }
+}

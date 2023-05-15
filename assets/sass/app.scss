@@ -13,6 +13,10 @@
 @import 'variables/app-colors';
 @import 'variables/app-typography';
 
+// Components
+@import "components/button";
+@import "components/breadcrumbs";
+
 // Layout
 @import "layout/about";
 @import "layout/app-typography";
@@ -20,16 +24,16 @@
 @import "layout/app-error";
 @import "layout/app-header";
 @import "layout/app-footer";
+@import "layout/app-forms";
 @import "layout/app-post";
+@import "layout/contact";
 @import "layout/cookie-consent";
+@import "layout/features";
 @import "layout/hero";
 @import "layout/modal";
+@import "layout/reference";
 @import "layout/services";
-
-// Components
-@import "components/button";
-@import "components/breadcrumbs";
 
 // Features
 @import "features/go-top";
-@import "features/owl-theme";
+@import "features/carousel";

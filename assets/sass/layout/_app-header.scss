@@ -140,16 +140,21 @@
       a {
         @include transition(.3s, ease-in-out);
 
+        border-bottom: .25rem solid transparent;
         color: var(--color-primary-default);
         display: block;
         font-size: 1rem;
         font-weight: bold;
         padding: .5rem 1rem;
         text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--color-secondary-default);
+          border-bottom: .25rem solid var(--color-secondary-default);
+        }
       }
 
-      &:hover,
-      &:focus,
       &.active a {
         color: var(--color-secondary-default);
       }

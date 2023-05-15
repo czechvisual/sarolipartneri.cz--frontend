@@ -1,7 +1,7 @@
 .services {
   background-color: var(--color-primary-default);
   color: var(--color-light-default);
-  padding: 5rem;
+  padding: 5rem 1rem;
 
   p {
     font-size: var(--font-size-p-medium);
@@ -23,6 +23,36 @@
     img {
       margin-bottom: 1rem;
       width: 4rem;
+    }
+  }
+
+  &-extended {
+    background-color: var(--color-primary-default);
+    color: var(--color-light-default);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    img.background {
+      height: 100%;
+      object-fit: cover;
+      opacity: .2;
+      position: absolute;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .container {
+      @include flex ($direction: column, $justify: center, $align: center);
+
+      padding: 8rem 1rem;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      @include media-queries-down(sm) {
+        padding: 5rem 1rem;
+      }
     }
   }
 }
