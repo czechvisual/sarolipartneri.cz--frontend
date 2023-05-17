@@ -29,3 +29,29 @@
     padding: 3rem 1rem;
   }
 }
+
+.pre-footer {
+  h4 {
+    color: var(--color-primary-default);
+  }
+
+  ul {
+    margin-top: 2rem;
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none ;
+
+    li {
+      line-height: var(--line-height-medium);
+    }
+  }
+
+  .social {
+    margin-top: 2rem;
+
+    i {
+      margin-right: 1rem;
+      color: var(--color-secondary-default);
+    }
+  }
+}

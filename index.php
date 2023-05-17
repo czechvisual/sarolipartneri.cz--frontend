@@ -18,4 +18,6 @@ echo component('reference', 'default');
 
 echo component('contact', 'default');
 
+echo component('footer', 'prefooter');
+
 get_footer();

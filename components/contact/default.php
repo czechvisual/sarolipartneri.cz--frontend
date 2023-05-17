@@ -1,7 +1,7 @@
 <div class="contact container">
     <div class="contact-cta">
-        <h2 class="mb-5 wow slideInRight" data-wow-duration="1s" data-wow-offset="10">
-            Vaše spokojenost je naší prioritou
+        <h2 class="mb-5 font-size-d1 wow slideInRight" data-wow-duration="1s" data-wow-offset="10">
+            Jste připraveni finančně růst?
         </h2>
 
         <?= component('button', 'default', [
@@ -13,7 +13,7 @@
         ]) ?>
     </div>
 
-    <div class="container">
+    <div id="contact" class="container py-5">
         <div class="row">
             <div class="contact-form col-12 col-md-6">
                 <h2>
